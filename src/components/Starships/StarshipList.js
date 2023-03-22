@@ -1,27 +1,15 @@
 import { StarshipContainer, StarshipTitle } from "./Starships.styled";
-import React, { useEffect, useState} from 'react';
-import axios from "axios";
+import ArrayOfStarships from "../../api/ArrayOfStarships";
 
 function StarshipList() {
 
-  const [starshipArray, setStarshipArray] = useState();
-
-  const getStarshipsData = async () => {
-    const response = await axios
-    .get("https://swapi.dev/api/starships/")
-    .then((res) => res.data.results);
-    setStarshipArray(response);
-  }
-
-  useEffect(() => {
-    getStarshipsData();
-  }, [])
-
+  ArrayOfStarships(); 
+  const arrayLista = ArrayOfStarships();  
 
   return (
     <div>
-      {starshipArray &&
-        starshipArray.map((starship) => (
+      {arrayLista &&
+        arrayLista.map((starship) => (
           <div>
           <StarshipContainer>
             <ul>

@@ -4,6 +4,7 @@ import GlobalStyles from "./styles/GlobalStyles";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import StarshipList from "./components/Starships/StarshipList";
+//import StarshipCard from "./components/StarshipCard/StarshipCard";
 
 const App = () => {
   return (
