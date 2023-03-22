@@ -3,8 +3,8 @@ import React from "react";
 import GlobalStyles from "./styles/GlobalStyles";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
-import StarshipList from "./components/Starships/StarshipList";
-//import StarshipCard from "./components/StarshipCard/StarshipCard";
+//import StarshipList from "./components/Starships/StarshipList";
+import StarshipCard from "./components/StarshipCard/StarshipCard";
 
 const App = () => {
   return (
@@ -17,7 +17,7 @@ const App = () => {
         <Navbar />
       </nav>
       <main>
-        <StarshipList />
+        <StarshipCard />
       </main>
       <footer>
         <>Aquí footer</>

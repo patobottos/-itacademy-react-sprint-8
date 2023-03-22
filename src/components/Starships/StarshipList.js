@@ -4,14 +4,14 @@ import ArrayOfStarships from "../../api/ArrayOfStarships";
 function StarshipList() {
 
   ArrayOfStarships(); 
-  const arrayLista = ArrayOfStarships();  
+  const arrayList = ArrayOfStarships();  
 
   return (
     <div>
-      {arrayLista &&
-        arrayLista.map((starship) => (
+      {arrayList &&
+        arrayList.map((starship, index) => (
           <div>
-          <StarshipContainer>
+          <StarshipContainer key={index}>
             <ul>
               <li>
                 <StarshipTitle>{starship.name}</StarshipTitle>
