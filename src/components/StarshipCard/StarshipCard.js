@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
 import { StarshipContainer } from "../Starships/Starships.styled";
 import {
   StarshipName,
   StarshipImg,
   StarshipDetailsContainer,
   DetailsTop,
-  //DetailsLeft,
-  //DetailsRight,
+  DetailsMiddle,
 } from "./StarshipCard.styles";
 
+
 function StarshipCard() {
+  
+  // CODI IDEAL 
+  //const id = index;
+  
   // ID EXAMPLE
-  const id = 4;
+  const id = 4
 
   const [starshipData, setStarshipData] = useState();
 
@@ -42,25 +45,71 @@ function StarshipCard() {
             <StarshipImg />
             <StarshipDetailsContainer>
               <DetailsTop>
-                <p>MODEL: {starship.model}</p>
-                <p>STARSHIP CLASS: {starship.starship_class}</p>
-                <p>MANUFACTURER: {starship.manufacturer}</p>
-                <p>COST: {starship.cost_in_credits} credits</p>
+                <div className="item">
+                  <div className="title">MODEL:</div>
+                  <div className="data">{starship.model}</div>
+                </div>
+                <div className="item">
+                  <div className="title">STARSHIP CLASS:</div>
+                  <div className="data">{starship.starship_class}</div>
+                </div>
+                <div className="item">
+                  <div className="title">MANUFACTURER:</div>
+                  <div className="data">{starship.manufacturer}</div>
+                </div>
+                <div className="item">
+                  <div className="title">COST:</div>
+                  <div className="data">{starship.cost_in_credits} credits</div>
+                </div>
               </DetailsTop>
-              <DetailsTop>
-                <p>CREW: {starship.crew}</p>
-                <p>PASSENGER CAPACITY: {starship.passengers}</p>
-                <p>CARGO CAPACITY: {starship.cargo_capacity}</p>
-                <p>CONSUMABLES: {starship.consumables}</p>
-              </DetailsTop>
-              <DetailsTop>
-                <p>LENGTH: {starship.length}</p>
-                <p>
-                  MAXIMUM ATMOSPHERING SPEED: {starship.max_atmosphering_speed}
-                </p>
-                <p>HYPERDRIVE RATING: {starship.hyperdrive_rating}</p>
-                <p>MAXIMUM SPEED IN REALSPACE: {starship.MGLT}</p>
-              </DetailsTop>
+
+              <DetailsMiddle>
+                <div className="left">
+                  <div className="item">
+                    <div className="title">CREW:</div>
+                    <div className="data">{starship.crew}</div>
+                  </div>
+
+                  <div className="item">
+                    <div className="title">PASSENGER CAPACITY:</div>
+                    <div className="data">{starship.passengers}</div>
+                  </div>
+
+                  <div className="item">
+                    <div className="title">CARGO CAPACITY:</div>
+                    <div className="data">{starship.cargo_capacity}</div>
+                  </div>
+
+                  <div className="item">
+                    <div className="title">CONSUMABLES:</div>
+                    <div className="data">{starship.consumables}</div>
+                  </div>
+                </div>
+
+                <div className="right">
+                  <div className="item">
+                    <div className="title">LENGTH:</div>
+                    <div className="data">{starship.length}</div>
+                  </div>
+
+                  <div className="item">
+                    <div className="title">MAXIMUM ATMOSPHERING SPEED:</div>
+                    <div className="data">{starship.max_atmosphering_speed}</div>
+                  </div>
+
+                  <div className="item">
+                    <div className="title">HYPERDRIVE RATING:</div>
+                    <div className="data">{starship.hyperdrive_rating}</div>
+                  </div>
+
+                  <div className="item">
+                    <div className="title">MAXIMUM SPEED IN REALSPACE:</div>
+                    <div className="data">{starship.MGLT}</div>
+                  </div>
+
+                </div>
+              </DetailsMiddle>
+              
             </StarshipDetailsContainer>
           </StarshipContainer>
         </div>

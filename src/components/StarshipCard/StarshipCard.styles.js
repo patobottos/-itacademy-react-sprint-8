@@ -25,8 +25,8 @@ export const StarshipDetailsContainer = styled.div`
   border-radius: 6px;
   display: flex;
   flex-direction: column;
-  padding: 5px;
-  border: 1px solid blue;
+  padding: 10px;
+  margin: 10px 0;
 `;
 
 export const DetailsTop = styled.div`
@@ -35,16 +35,64 @@ export const DetailsTop = styled.div`
   flex-direction: column;
   align-items: center;
   line-height: 15px;
-  margin: 2px 0;
-  border: 1px solid yellow;
+  margin: 10px 0;
+
+  .item {
+    display: flex;
+    flex-direction: row;
+    line-height: 20px;
+  }
+
+  .title {
+    justify-content: flex-end;
+    font-weight: 600;
+    color: white;
+    margin-right: 5px; 
+  }
+
+  .data {
+    justify-content: flex-start;
+    font-weight: 500;
+    color: #808080;
+    margin-left: 5px;
+    text-transform: uppercase;
+  }
 `;
 
-export const DetailsLeft = styled.p`
-  font-size: 1.1rem;
-  color: #ececec;
-`
-
-export const DetailsRight = styled.p`
-  font-size: 1rem;
+export const DetailsMiddle = styled.div`
   color: #c0c0c0;
-`
+  display: flex;
+  flex-direction: row;
+  line-height: 15px;
+  margin: 10px 0;
+
+  .left {
+    flex: 48%;
+  }
+
+  .right {
+    flex: 48%;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: row;
+    line-height: 20px;
+    font-size: 0.95rem;
+  }
+
+  .title {
+    justify-content: flex-end;
+    font-weight: 600;
+    color: #ececec;
+    margin-right: 5px; 
+  }
+
+  .data {
+    justify-content: flex-end;
+    font-weight: 500;
+    color: #808080;
+    margin-left: 5px;
+    text-transform: uppercase;
+  }
+`;
