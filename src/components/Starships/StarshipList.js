@@ -16,7 +16,7 @@ function StarshipList() {
               <ul>
                 <li>
                   <StarshipTitle>
-                    <Link to={"starships" + cutUrl(starship.url)}>
+                    <Link to={"/starships/" + cutUrl(starship.url)}>
                       {starship.name}
                     </Link>
                   </StarshipTitle>
