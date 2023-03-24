@@ -7,7 +7,7 @@ export const StarshipName = styled.div`
   color: white;
   text-align: center;
   padding: 10px;
-  margin-bottom: 10px;
+  margin: 10px 0;
 `;
 
 export const StarshipImg = styled.div`

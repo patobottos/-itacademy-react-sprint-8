@@ -9,14 +9,12 @@ import {
   DetailsMiddle,
 } from "./StarshipCard.styles";
 
-
 function StarshipCard() {
-  
-  // CODI IDEAL 
+  // CODI IDEAL
   //const id = index;
-  
+
   // ID EXAMPLE
-  const id = 4
+  const id = 4;
 
   const [starshipData, setStarshipData] = useState();
 
@@ -94,7 +92,9 @@ function StarshipCard() {
 
                   <div className="item">
                     <div className="title">MAXIMUM ATMOSPHERING SPEED:</div>
-                    <div className="data">{starship.max_atmosphering_speed}</div>
+                    <div className="data">
+                      {starship.max_atmosphering_speed}
+                    </div>
                   </div>
 
                   <div className="item">
@@ -106,10 +106,14 @@ function StarshipCard() {
                     <div className="title">MAXIMUM SPEED IN REALSPACE:</div>
                     <div className="data">{starship.MGLT}</div>
                   </div>
-
                 </div>
               </DetailsMiddle>
-              
+              <DetailsMiddle>
+                <div className="item">
+                  <div className="title">PILOTS:</div>
+                  <div className="data">{starship.pilots}</div>
+                </div>
+              </DetailsMiddle>
             </StarshipDetailsContainer>
           </StarshipContainer>
         </div>

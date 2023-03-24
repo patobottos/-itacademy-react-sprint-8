@@ -9,13 +9,13 @@ export const NavbarContainer = styled.div`
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
   background-color: #000;
-  padding: 0;
 
   ul {
     display: flex;
     list-style: none;
     align-content: center;
     padding: 0;
+    margin: 0;
   }
 
   li {
