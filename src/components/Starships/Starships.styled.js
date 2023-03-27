@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StarshipContainer = styled.div`
-  margin: 5px 20px;
+  margin: 5px 10%;
   display: flex;
   flex-direction: column;
 

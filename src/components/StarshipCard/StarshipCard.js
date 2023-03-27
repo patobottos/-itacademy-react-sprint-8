@@ -1,17 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { StarshipContainer } from "../Starships/Starships.styled";
-import {
-  StarshipName,
-  StarshipImg,
-  StarshipDetailsContainer,
-  DetailsTop,
-  DetailsMiddle,
-} from "./StarshipCard.styles";
+import {StarshipName, StarshipDetailsContainer, DetailsTop, DetailsMiddle, ImageContainer, StarshipImg} from './StarshipCard.styles';
 import { useParams } from "react-router-dom";
 
 function StarshipCard() {
-  // ID EXAMPLE
   const { id } = useParams();
 
   const [starshipData, setStarshipData] = useState(null);
@@ -37,17 +30,26 @@ function StarshipCard() {
   if (error) return `There has been an error!`;
 
   const starship = starshipData;
+  //const starshipImg = "https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350";
+
+  const starshipImg =
+    "https://starwars-visualguide.com/assets/img/starships/" + id + ".jpg";
+
+  console.log("starshipImg", starshipImg);
 
   return (
     <div>
       {starshipData && (
         <div>
           <StarshipContainer>
-            
-            <StarshipName>{starship.name}
-            <h1>Viendo id: {id}</h1>
+            <StarshipName>
+              {starship.name}
+              <h1>Viendo id: {id}</h1>
             </StarshipName>
-            <StarshipImg />
+
+            <StarshipImg>
+              <img src={starshipImg} />
+            </StarshipImg>
             <StarshipDetailsContainer>
               <DetailsTop>
                 <div className="item">

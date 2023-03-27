@@ -11,13 +11,12 @@ export const StarshipName = styled.div`
 `;
 
 export const StarshipImg = styled.div`
-  background-image: url("https://www.udacity.com/blog/wp-content/uploads/2021/02/img8.png");
-  background-repeat: no-repeat;
-  background-position-x: center;
+  display: flex;
   width: auto;
   height: 40vh;
-  margin: 0;
-  padding: 0;
+  margin: 40px 0px;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const StarshipDetailsContainer = styled.div`
