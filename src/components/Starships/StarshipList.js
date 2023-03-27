@@ -1,16 +1,28 @@
 import { StarshipContainer, StarshipTitle } from "./Starships.styled";
-import ArrayOfStarships from "../../api/ArrayOfStarships";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { cutUrl } from "../../app/utils";
 
 function StarshipList() {
-  ArrayOfStarships();
-  const arrayList = ArrayOfStarships();
+
+  const [starshipArray, setStarshipArray] = useState(null);
+
+  const getStarshipsData = async () => {
+    const response = await axios
+      .get("https://swapi.dev/api/starships/")
+      .then((res) => res.data.results);
+    setStarshipArray(response);
+  };
+
+  useEffect(() => {
+    getStarshipsData();
+  }, []);
 
   return (
     <div>
-      {arrayList &&
-        arrayList.map((starship, index) => (
+      {starshipArray &&
+        starshipArray.map((starship, index) => (
           <div>
             <StarshipContainer key={index}>
               <ul>
@@ -22,6 +34,7 @@ function StarshipList() {
                   </StarshipTitle>
                 </li>
                 <li>{starship.model}</li>
+                <li>ID nave: {cutUrl(starship.url)}</li>
               </ul>
             </StarshipContainer>
           </div>

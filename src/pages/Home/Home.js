@@ -1,10 +1,11 @@
 import React from "react";
+import { TextHome } from "./Home.styled";
 
 export default function Home() {
   return (
     <div>
       <main>
-        <div>Aquí texto Wellcome page</div>
+        <TextHome>UNDER CONSTRUCTION: Aquí texto Wellcome page</TextHome>
       </main>
       <footer>
         <>Aquí footer</>

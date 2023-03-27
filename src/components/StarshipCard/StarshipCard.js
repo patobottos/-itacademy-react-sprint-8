@@ -8,38 +8,45 @@ import {
   DetailsTop,
   DetailsMiddle,
 } from "./StarshipCard.styles";
+import { useParams } from "react-router-dom";
 
 function StarshipCard() {
-  // CODI IDEAL
-  //const id = index;
-
   // ID EXAMPLE
-  const id = 4;
+  const { id } = useParams();
 
-  const [starshipData, setStarshipData] = useState();
+  const [starshipData, setStarshipData] = useState(null);
+  const [error, setError] = useState(null);
 
   // FUNCTION TO GET STARSHIP DATA
-  const getStarshipsData = async () => {
+  const getStarshipData = async () => {
     const response = await axios
       .get("https://swapi.dev/api/starships/")
-      .then((res) => res.data.results[id]);
+      .then((res) => res.data.results[id])
+      .catch((error) => {
+        setError(error);
+      });
     setStarshipData(response);
   };
 
   // GET API DATA ON PAGE LOAD
   useEffect(() => {
-    getStarshipsData();
+    getStarshipData();
   }, []);
 
+  // PRINT ERROR
+  if (error) return `There has been an error!`;
+
   const starship = starshipData;
-  console.log("my starship", starship);
 
   return (
     <div>
       {starshipData && (
         <div>
           <StarshipContainer>
-            <StarshipName>{starship.name}</StarshipName>
+            
+            <StarshipName>{starship.name}
+            <h1>Viendo id: {id}</h1>
+            </StarshipName>
             <StarshipImg />
             <StarshipDetailsContainer>
               <DetailsTop>
