@@ -1,6 +1,8 @@
-// AQUÍ CREO FUNCIÓN QUE OBTIENE EL ID DE LA NAVE A PARTIR DE LA URL QUE LE PASARÉ
+// FUNCTION THAT GETS THE COMPLETE URL AND EXTRACTS THE STARSHIP ID, SENT BACK TO THE INDIVIDUAL SHIP CARD COMPONENT
 
 export const cutUrl = (urlComplete) => {
-  const id = urlComplete.slice(-2, -1);
+  const regEx = /(?<=\/)\d+(?=\/)/gm
+  const id = parseInt(urlComplete.match(regEx));
+  console.log('id recortado', id);
   return id;
 };

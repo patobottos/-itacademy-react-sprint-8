@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { StarshipContainer } from "../Starships/Starships.styled";
-import {StarshipName, StarshipDetailsContainer, DetailsTop, DetailsMiddle, ImageContainer, StarshipImg} from './StarshipCard.styles';
+import {StarshipName, StarshipDetailsContainer, DetailsTop, DetailsMiddle, StarshipImg} from './StarshipCard.styles';
 import { useParams } from "react-router-dom";
 
 function StarshipCard() {
@@ -30,7 +30,6 @@ function StarshipCard() {
   if (error) return `There has been an error!`;
 
   const starship = starshipData;
-  //const starshipImg = "https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350";
 
   const starshipImg =
     "https://starwars-visualguide.com/assets/img/starships/" + id + ".jpg";

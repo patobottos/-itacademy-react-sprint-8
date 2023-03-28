@@ -24,10 +24,10 @@ function StarshipList() {
       {starshipArray &&
         starshipArray.map((starship, index) => (
           <div>
-            <StarshipContainer key={index}>
+            <StarshipContainer>
               <ul>
                 <li>
-                  <StarshipTitle>
+                  <StarshipTitle key={index}>
                     <Link to={"/starships/" + cutUrl(starship.url)}>
                       {starship.name}
                     </Link>
