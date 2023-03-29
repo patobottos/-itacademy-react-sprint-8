@@ -2,7 +2,7 @@ import { HeaderContainer,  ButtonsContainer } from "./Header.styled";
 import { HeaderButton } from "../../styles/AppStyles"
 import starWarslogo from "../../assets/img/star_wars_logo.png"
 
-function Header () {
+const Header = () => {
   return ( 
     <HeaderContainer>
       <div>

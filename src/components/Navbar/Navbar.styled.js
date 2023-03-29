@@ -6,7 +6,6 @@ export const NavbarContainer = styled.div`
   align-items: center;
   font-family: "Cairo";
   font-size: 0.95rem;
-  border-top: 1px solid grey;
   border-bottom: 1px solid grey;
   background-color: #000;
 
@@ -21,14 +20,15 @@ export const NavbarContainer = styled.div`
   li {
     text-align: center;
     color: #bfbfbf;
-    padding: 10px;
+    padding: 5px;
     width: 8rem;
-    border-right:1px solid grey;
-    border-left:1px solid grey;
 
-      &:hover {
-        color: white;
-        border-bottom: solid #528dda;
+    &:hover {
+      color: white;
+      
+      .laser {
+        box-shadow: 0px 5px 5px 1.5px white;
+      }
     }
   }
-`
+`;

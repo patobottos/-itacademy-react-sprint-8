@@ -30,3 +30,24 @@ export const StarshipTitle = styled.div`
     color: #E6E6E6;
 `
 
+export const ButtonViewMore = styled.button`
+  font-family: "Cairo";
+  font-size: 0.95rem;
+  border: 1px solid white;
+  border-radius: 7px;
+  background-color: #000;
+  color: #bfbfbf;
+  cursor: pointer;
+  padding: 6px 12px;
+  text-align: center;
+  max-width: 20vw;
+  margin: 10px;
+  transition: 0.3s;
+  align-self: center;
+
+  &:hover {
+      color: blue;
+      border: 1px solid blue;
+    }
+`
+

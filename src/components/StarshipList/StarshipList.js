@@ -1,11 +1,14 @@
-import { StarshipContainer, StarshipTitle } from "./Starships.styled";
+import {
+  StarshipContainer,
+  StarshipTitle,
+  ButtonViewMore,
+} from "./Starships.styled";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { cutUrl } from "../../app/utils";
 
 function StarshipList() {
-
   const [starshipArray, setStarshipArray] = useState(null);
 
   const getStarshipsData = async () => {
@@ -19,12 +22,16 @@ function StarshipList() {
     getStarshipsData();
   }, []);
 
+  const handleViewMore = () => {
+    return(console.log("View more pages"))
+  };
+
   return (
     <div>
-      {starshipArray &&
-        starshipArray.map((starship, index) => (
-          <div>
-            <StarshipContainer>
+      <StarshipContainer>
+        {starshipArray &&
+          starshipArray.map((starship, index) => (
+            <div>
               <ul>
                 <li>
                   <StarshipTitle key={index}>
@@ -36,9 +43,10 @@ function StarshipList() {
                 <li>{starship.model}</li>
                 <li>ID nave: {cutUrl(starship.url)}</li>
               </ul>
-            </StarshipContainer>
-          </div>
-        ))}
+            </div>
+          ))}
+        <ButtonViewMore onClick={handleViewMore}>View more</ButtonViewMore>
+      </StarshipContainer>
     </div>
   );
 }

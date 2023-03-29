@@ -2,12 +2,12 @@ import React from "react";
 import { NavbarContainer } from "./Navbar.styled"
 import { Link } from "react-router-dom";
 
-function Navbar() {
+const Navbar = () => {
   return (
     <NavbarContainer>
       <ul>
-        <li><Link to="/">HOME</Link></li>
-        <li><Link to="/starships">STARSHIPS</Link></li>
+        <li><Link to="/">HOME</Link><div className='laser'></div></li>
+        <li><Link to="/starships">STARSHIPS</Link><div className='laser'></div></li>
       </ul>
     </NavbarContainer>
   );
