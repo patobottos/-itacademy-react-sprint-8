@@ -20,7 +20,7 @@ export const WellcomeButton = styled.button`
   cursor: pointer;
   padding: 6px 12px;
   text-align: center;
-  width: 20vw;
+  width: 15vw;
   margin: 20px;
   transition: 0.3s;
   align-self: center;
