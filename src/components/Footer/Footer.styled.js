@@ -4,6 +4,7 @@ export const FooterContainer = styled.div`
   position: absolute;
   bottom: 0;
   width: 100vw;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,13 +13,43 @@ export const FooterContainer = styled.div`
   font-size: 0.85rem;
   word-spacing: 2px;
   color: white;
-  background-color: #000;
-  border: 1px solid transparent;
-  margin-bottom: 100px;
+  background-color: black;
+  margin-bottom: 10px;
 
   p {
     justify-content: center;
     align-self: center;
+  }
+
+  .lucasfilm {
+    position: relative;
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+    line-height: 0.8rem;
+  }
+
+  .icons {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+    gap: 30px;
+
+    ul {
+      display: flex;
+      list-style: none;
+      align-content: center;
+      padding: 0;
+      margin: 0;
+      gap: 30px;
+      font-size: 20px;
+    }
+  }
+
+  .lastline {
+    margin-bottom: 5px;
   }
 
   ul {
@@ -30,7 +61,7 @@ export const FooterContainer = styled.div`
     padding-bottom: 10px;
     margin-bottom: 10px;
     max-height: 10px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     line-height: 1rem;
   }
 
@@ -58,38 +89,5 @@ export const FooterContainer = styled.div`
     width: 0.5px;
     background-color: grey;
     align-self: center;
-  }
-
-  .icons {
-    border: 1px solid blue;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-
-    ul {
-      display: flex;
-      list-style: none;
-      align-content: center;
-      padding: 0;
-      margin: 0;
-    }
-
-    li {
-      text-align: center;
-      padding: 5px;
-      width: 8rem;
-    }
-
-    img {
-      width: auto;
-      height: 4vh;
-      margin: 40px 0px;
-      align-items: center;
-      justify-content: center;
-    }
-
-
   }
 `;

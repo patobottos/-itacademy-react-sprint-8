@@ -27,6 +27,7 @@ export const StarshipTitle = styled.div`
   cursor: pointer;
   &:hover {
     text-decoration: underline;
+    text-underline-offset: 5px;
     color: #E6E6E6;
 `
 

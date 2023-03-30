@@ -15,9 +15,21 @@ const GlobalStyles = createGlobalStyle`
     background-color: #000;
     background-image: url(${backgroundImage});
     font-family: "Cairo", "Rubik", sans-serif;
-    margin: 0;
+    margin: 0 auto;
   }
-`
+
+  a {
+    color: #bfbfbf;
+  }
+
+  a:link {
+  text-decoration: none;
+  }
+
+  a:visited {
+  text-decoration: none;
+  }
+
+`;
 
 export default GlobalStyles;
-
