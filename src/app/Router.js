@@ -23,7 +23,7 @@ const Router = () => (
         <Route path="/login/" element={<Login />} />
         <Route path="*" element={<Error />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </AppContainer>
   </BrowserRouter>
 );

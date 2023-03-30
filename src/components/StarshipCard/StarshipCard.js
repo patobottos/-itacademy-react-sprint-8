@@ -5,7 +5,7 @@ import {StarshipName, StarshipDetailsContainer, DetailsTop, DetailsMiddle, Stars
 import { useParams } from "react-router-dom";
 
 const StarshipCard = () => {
-  const { id } = useParams();
+  const { id } = useParams(null);
 
   const [starshipData, setStarshipData] = useState(null);
   const [error, setError] = useState(null);
@@ -13,8 +13,8 @@ const StarshipCard = () => {
   // FUNCTION TO GET STARSHIP DATA
   const getStarshipData = async () => {
     const response = await axios
-      .get("https://swapi.dev/api/starships/")
-      .then((res) => res.data.results[id])
+      .get("https://swapi.dev/api/starships/"+ id )
+      .then((res) => res.data)
       .catch((error) => {
         setError(error);
       });
@@ -29,12 +29,12 @@ const StarshipCard = () => {
   // PRINT ERROR
   if (error) return `There has been an error!`;
 
-  const starship = {...starshipData};
+  const starship = {...starshipData}; // QUITAR ESTA LINEA, NO ES NECESARIO
 
   const starshipImg =
     "https://starwars-visualguide.com/assets/img/starships/" + id + ".jpg";
 
-  console.log("starshipImg", starshipImg);
+  // console.log("starshipImg", starshipImg);
 
   return (
     <div>

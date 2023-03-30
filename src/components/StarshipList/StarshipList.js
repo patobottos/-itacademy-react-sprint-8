@@ -8,8 +8,9 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { cutUrl } from "../../app/utils";
 
-function StarshipList() {
+const StarshipList = () => {
   const [starshipArray, setStarshipArray] = useState(null);
+  const [page, setPage] = useState(1);
 
   const getStarshipsData = async () => {
     const response = await axios
@@ -22,8 +23,16 @@ function StarshipList() {
     getStarshipsData();
   }, []);
 
+  /*
+  useEffect(() => {
+
+  }, [page]);
+  */
+
   const handleViewMore = () => {
-    return(console.log("View more pages"))
+    return(
+      console.log("View new page!")
+      )
   };
 
   return (

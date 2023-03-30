@@ -8,6 +8,6 @@ export const cutUrl = (urlComplete) => {
 
 export const cutActualPage = (url) => {
   const regEx = /(?<=page=)\d+/gm;
-  const pageNum = parseInt(url.match(regEx), 10);
+  const pageNum = parseInt(url.match(regEx));
   return pageNum;
 };
