@@ -9,30 +9,23 @@ import { Link } from "react-router-dom";
 import { cutUrl } from "../../app/utils";
 
 const StarshipList = () => {
-  const [starshipArray, setStarshipArray] = useState(null);
+  const [starshipArray, setStarshipArray] = useState([]);
   const [page, setPage] = useState(1);
 
   const getStarshipsData = async () => {
     const response = await axios
-      .get("https://swapi.dev/api/starships/")
+      .get("https://swapi.dev/api/starships/?page="+ page )
       .then((res) => res.data.results);
-    setStarshipArray(response);
+    setStarshipArray([...starshipArray, ...response]);
   };
 
   useEffect(() => {
     getStarshipsData();
-  }, []);
-
-  /*
-  useEffect(() => {
-
   }, [page]);
-  */
+
 
   const handleViewMore = () => {
-    return(
-      console.log("View new page!")
-      )
+    setPage(page + 1);
   };
 
   return (
