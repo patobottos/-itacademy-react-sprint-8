@@ -1,6 +1,7 @@
 import { HeaderContainer,  ButtonsContainer } from "./Header.styled";
-import { HeaderButton } from "../../styles/AppStyles"
-import starWarslogo from "../../assets/img/star_wars_logo.png"
+import { HeaderButton } from "../../styles/AppStyles";
+import starWarslogo from "../../assets/img/star_wars_logo.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return ( 
@@ -9,7 +10,7 @@ const Header = () => {
         <img src={starWarslogo} alt="star wars logo" />
       </div>
       <ButtonsContainer>
-        <HeaderButton>LOG IN</HeaderButton>
+        <HeaderButton><Link to="/login">LOG IN</Link></HeaderButton>
         <HeaderButton>SIGN UP</HeaderButton>
       </ButtonsContainer>
     </HeaderContainer>
