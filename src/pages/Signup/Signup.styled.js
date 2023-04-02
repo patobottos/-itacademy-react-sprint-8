@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const LoginMainContainer = styled.div`
+export const SignupMainContainer = styled.div`
   width: 400px;
   padding: 10px;
   margin: 7% auto;
@@ -14,7 +14,7 @@ export const LoginMainContainer = styled.div`
   font-size: 1.1rem;
 `;
 
-export const LoginContainer = styled.div`
+export const SignupContainer = styled.div`
   width: 350px;
   margin: 10px 20px;
   display: flex;
@@ -44,7 +44,7 @@ export const LoginContainer = styled.div`
   }
 `;
 
-export const LoginButton = styled.button`
+export const SignupButton = styled.button`
   min-width: 350px;
   margin: 10px 20px;
   padding: 5px 20px;
@@ -61,7 +61,7 @@ export const LoginButton = styled.button`
   }
 `;
 
-export const LoginFooter = styled.div`
+export const SignupFooter = styled.div`
   margin: 20px 0;
   cursor: pointer;
 

@@ -11,7 +11,7 @@ const Header = () => {
       </div>
       <ButtonsContainer>
         <HeaderButton><Link to="/login">LOG IN</Link></HeaderButton>
-        <HeaderButton>SIGN UP</HeaderButton>
+        <HeaderButton><Link to="/signup">SIGN UP</Link></HeaderButton>
       </ButtonsContainer>
     </HeaderContainer>
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { LoginContainer } from "./Login.styled.js";
+import { LoginMainContainer, LoginContainer } from "./Login.styled.js";
+import {LoginButton, LoginFooter} from './Login.styled';
 
 const savedUserData = localStorage.getItem("userInfo");
 const savedUserDataParsed = savedUserData
@@ -8,42 +9,40 @@ const savedUserDataParsed = savedUserData
 
 console.log("savedUserDataParsed a l'inici", savedUserDataParsed);
 
-export default function Login() {
+export default function Login(props) {
 
-  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
 
   // GUARDANT INFO USUARIS
   useEffect(() => {
-    const userData = { userName, userPassword };
+    const userData = { userEmail, userPassword };
     localStorage.setItem("userInfo", JSON.stringify(userData));
     console.log('userData post guardado', userData);
-  }, [userName, userPassword]);
+  }, [userEmail, userPassword]);
 
   const handleLogin = (event) => {
     event.preventDefault();
-    console.log("Envío de datossss!");
+    console.log("Sending login!");
   }
 
-
   return (
-    <LoginContainer>
-      <h3>LOGUEATE EN STAR WARS!</h3>
+    <LoginMainContainer>
       <form onSubmit={handleLogin}>
-        <div>
-          <label for="username">Username: </label>
+        <LoginContainer>
+          <label htmlFor="email">email: </label>
           <input
             type="email"
-            value={userName}
-            id="username"
-            name="username"
-            placeholder="Enter your email as username"
-            onChange={(event) => setUserName(event.target.value)}
-          ></input>
-        </div>
+            value={userEmail}
+            id="userEmail"
+            name="userEmail"
+            placeholder="Enter your email"
+            onChange={(event) => setUserEmail(event.target.value)}
+          />
+        </LoginContainer>
 
-        <div>
-          <label for="password">Password: </label>
+        <LoginContainer>
+          <label htmlFor="password">password: </label>
           <input
             type="password"
             value={userPassword}
@@ -51,10 +50,11 @@ export default function Login() {
             name="password"
             placeholder="Enter your password"
             onChange={(event) => setUserPassword(event.target.value)}
-          ></input>
-        </div>
-        <button>Login</button>
+          />
+        </LoginContainer>
+        <LoginButton type="submit">Log in</LoginButton>
       </form>
-    </LoginContainer>
+      <LoginFooter onClick={() => props.onFormSwitch('signup')}>Don't you have an account? Register here!</LoginFooter>
+    </LoginMainContainer>
   );
 }
