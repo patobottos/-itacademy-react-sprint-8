@@ -37,6 +37,7 @@ export const LoginContainer = styled.div`
     color: #ebd900;
     background-color: #484848;
     border: 0.5px solid #ebd900;
+    margin-bottom: 10px;
 
     :focus {
       border: 0.5px solid #ebd900;
@@ -55,6 +56,7 @@ export const LoginButton = styled.button`
   background-color: #484848;
   color: #f5f5f5;
   border: 1px solid transparent;
+  cursor: pointer;
 
   :hover {
     background-color: #3f6eac;

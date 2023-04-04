@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const WellcomeContainer = styled.div`
+export const WelcomeContainer = styled.div`
   max-width: 100%;
   padding: 20px;
   margin: 0 auto;
@@ -10,7 +10,7 @@ export const WellcomeContainer = styled.div`
   color: white;
 `;
 
-export const WellcomeButton = styled.button`
+export const WelcomeButton = styled.button`
   font-family: "Cairo";
   font-size: 0.95rem;
   border: 0.5px solid #bfbfbf;

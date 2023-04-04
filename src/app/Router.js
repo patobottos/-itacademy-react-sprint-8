@@ -8,6 +8,7 @@ import Error from "../pages/Error/Error";
 import Header from "../components/Header/Header";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
+import Welcome from "../components/Welcome/Welcome";
 import AppContainer from "../components/MainContainer/MainContainer.styled";
 
 const Router = () => (
@@ -21,9 +22,10 @@ const Router = () => (
         <Route path="/starships/:id" element={<Starship />} />
         <Route path="/login/" element={<Login />} />
         <Route path="/signup/" element={<Signup />} />
+        <Route path="/welcome/" element={<Welcome />} />
         <Route path="*" element={<Error />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> COMENTO PER TENIR MES ESPAI AL LOGIN*/}
     </AppContainer>
   </BrowserRouter>
 );

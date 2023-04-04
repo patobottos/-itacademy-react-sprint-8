@@ -1,59 +1,109 @@
-import React, { useState } from 'react';
-import {SignupMainContainer, SignupContainer, SignupFooter, SignupButton} from './Signup.styled';
-
+import { useState } from "react";
+import {
+  SignupMainContainer,
+  SignupContainer,
+  SignupFooter,
+  SignupButton,
+  SuccessfulRegistration
+} from "./Signup.styled";
+import { Link } from "react-router-dom";
 
 export default function Signup(props) {
-  const [userName, setUserName] = useState("");
-  const [userEmail, setUserEmail] = useState("");
-  const [userPassword, setUserPassword] = useState("");
+  const [userData, setUserData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const [signedUpUser, setSignedUpUser] = useState(false);
 
   const handleSignup = (event) => {
     event.preventDefault();
-    console.log("Sending Signup");
-  }
+
+    if (userData.name && userData.email && userData.password) {
+      setUserData({
+        name: "",
+        email: "",
+        password: "",
+      });
+      localStorage.setItem("userInfo", JSON.stringify(userData));
+      setSignedUpUser(true);
+    }
+
+    console.log("User Name:", userData.name);
+    console.log("User Email:", userData.email);
+    console.log("User Password:", userData.password);
+    console.log("User signed up!");
+    console.log("user data", userData);
+  };
 
   return (
-    <SignupMainContainer>
-      <form id="signup-form">
-        <SignupContainer>
+    <div>
+      <div>
+      {signedUpUser ? (
+        <div>
+        <SuccessfulRegistration>
+        <Link to="/">Successful registration!</Link>
+        </SuccessfulRegistration>
+          
+        </div>
+      ) : (
+        <SignupMainContainer>
+          <form id="signup-form" onSubmit={handleSignup}>
+            <SignupContainer>
+              <label htmlFor="username">Your full name: </label>
+              <input
+                type="text"
+                value={userData.name}
+                id="username"
+                name="username"
+                placeholder="Enter your full name"
+                required
+                onChange={(e) =>
+                  setUserData({ ...userData, name: e.target.value })
+                }
+              />
+            </SignupContainer>
 
-          <label htmlFor="username">Your full name: </label>
-          <input 
-            type="text"
-            value={userName}
-            id="username"
-            name="username"
-            placeholder="Enter your full name"
-            onChange={(event) => setUserName(event.target.value)}
-            />
-        </SignupContainer>
+            <SignupContainer>
+              <label htmlFor="email">email: </label>
+              <input
+                type="email"
+                value={userData.email}
+                id="userEmail"
+                name="userEmail"
+                placeholder="Enter your email"
+                required
+                onChange={(e) =>
+                  setUserData({ ...userData, email: e.target.value })
+                }
+              />
+            </SignupContainer>
 
-        <SignupContainer>
-          <label htmlFor="email">email: </label>
-          <input
-            type="email"
-            value={userEmail}
-            id="userEmail"
-            name="userEmail"
-            placeholder="Enter your email"
-            onChange={(event) => setUserEmail(event.target.value)}
-          />
-        </SignupContainer>
+            <SignupContainer>
+              <label htmlFor="password">password: </label>
+              <input
+                type="password"
+                value={userData.password}
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+                onChange={(e) =>
+                  setUserData({ ...userData, password: e.target.value })
+                }
+              />
+            </SignupContainer>
+            <SignupButton type="submit">Sign up</SignupButton>
+          </form>
+          <SignupFooter onClick={() => props.onFormSwitch("login")}>
+            You already have an account? Log in here!
+          </SignupFooter>
+        </SignupMainContainer>
+      )}
 
-        <SignupContainer>
-          <label htmlFor="password">password: </label>
-          <input
-            type="password"
-            value={userPassword}
-            id="password"
-            name="password"
-            placeholder="Enter your password"
-            onChange={(event) => setUserPassword(event.target.value)}
-          />
-        </SignupContainer>
-        <SignupButton type="submit">Sign up</SignupButton>
-      </form>
-      <SignupFooter onClick={() => props.onFormSwitch('login')}>You already have an account? Log in here!</SignupFooter>
-    </SignupMainContainer>
+      </div>
+      
+    </div>
   );
 }

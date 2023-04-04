@@ -37,6 +37,7 @@ export const SignupContainer = styled.div`
     color: #ebd900;
     background-color: #484848;
     border: 0.5px solid #ebd900;
+    margin-bottom: 10px;
 
     :focus {
       border: 0.5px solid #ebd900;
@@ -55,6 +56,7 @@ export const SignupButton = styled.button`
   background-color: #484848;
   color: #f5f5f5;
   border: 1px solid transparent;
+  cursor: pointer;
 
   :hover {
     background-color: #3f6eac;
@@ -69,3 +71,23 @@ export const SignupFooter = styled.div`
     color: blue;
   }
 `;
+
+export const SuccessfulRegistration = styled.div`
+  width: 400px;
+  padding: 10px;
+  margin: 7% auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  color: white;
+  font-size: 1.1rem;
+  font-size: 2rem;
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+  
+  :hover {
+    color: green;
+  }
+`

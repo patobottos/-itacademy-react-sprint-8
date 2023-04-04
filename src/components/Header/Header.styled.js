@@ -14,7 +14,7 @@ export const HeaderContainer = styled.div`
   img {
     display: inline-block;
     margin: 0 auto;
-    max-height: 220px;
+    max-height: 200px;
   }
 `
 
