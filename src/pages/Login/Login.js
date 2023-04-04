@@ -29,10 +29,8 @@ export default function Login(props) {
       alert("Please, sign up first");
     }
 
-    if (
-      userEmailLogin === savedUserDataParsed.email &&
-      userPasswordLogin === savedUserDataParsed.password
-    ) {
+    if (userEmailLogin === savedUserDataParsed.email &&
+        userPasswordLogin === savedUserDataParsed.password ) {
       console.log("Succesful login!");
       setSuccessfulLogin(true);
     } else {
@@ -48,7 +46,7 @@ export default function Login(props) {
         </div>
       ) : (
         <LoginMainContainer>
-          <form onSubmit={handleLogin}>
+          <form>
             <LoginContainer>
               <label htmlFor="email">email: </label>
               <input
@@ -74,7 +72,7 @@ export default function Login(props) {
                 onChange={(event) => setUserPasswordLogin(event.target.value)}
               />
             </LoginContainer>
-            <LoginButton type="submit">Log in</LoginButton>
+            <LoginButton type="button" onClick={handleLogin}>Log in</LoginButton>
           </form>
           <LoginFooter onClick={() => props.onFormSwitch("signup")}>
             Don't you have an account? Register here!
