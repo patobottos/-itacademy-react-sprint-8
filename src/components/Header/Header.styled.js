@@ -10,7 +10,6 @@ export const HeaderContainer = styled.div`
   gap: 0.75rem;
   text-align: center;
   background-color: #000;
-  border: 1px solid green;
 
   img {
     display: inline-block;
@@ -25,4 +24,10 @@ export const ButtonsContainer = styled.div`
   margin-right: 10px;
   display: flex;
   gap: 10px;
+
+  @media (max-width: 680px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `

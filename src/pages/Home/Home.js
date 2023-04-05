@@ -3,7 +3,7 @@ import Login from "../Login/Login";
 import Signup from "../Signup/Signup";
 
 export default function Home() {
-  const [currentContext, setCurrentContext] = useState('login');
+  const [currentContext, setCurrentContext] = useState('signup');
 
   const toggleContext = (contextName) => {
     setCurrentContext(contextName); 
