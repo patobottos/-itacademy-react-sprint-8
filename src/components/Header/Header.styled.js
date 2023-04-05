@@ -16,7 +16,7 @@ export const HeaderContainer = styled.div`
     display: inline-block;
     text-align: center;
     margin-left: 41%;
-    max-height: 200px;
+    max-height: 201px;
   }
 `
 
