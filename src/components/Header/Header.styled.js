@@ -1,27 +1,28 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
-  max-width: 100%;
-  padding: 0 20px;
+  max-width: 98%;
+  padding: 0 5px;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 0.75rem;
   text-align: center;
   background-color: #000;
+  border: 1px solid green;
 
   img {
     display: inline-block;
-    margin: 0 auto;
+    text-align: center;
+    margin-left: 41%;
     max-height: 200px;
   }
 `
 
 export const ButtonsContainer = styled.div`
-  position: absolute;
-  right: 30px;
+  position: relative;
+  margin-right: 10px;
   display: flex;
   gap: 10px;
-  justify-content: flex-end;
 `

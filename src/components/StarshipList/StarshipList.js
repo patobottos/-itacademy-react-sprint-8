@@ -11,6 +11,9 @@ import { cutUrl } from "../../app/utils";
 const StarshipList = () => {
   const [starshipArray, setStarshipArray] = useState([]);
   const [page, setPage] = useState(1);
+  const userInfo = localStorage.getItem("userInfo");
+
+  console.log('user info en StarshipList',userInfo );
 
   const getStarshipsData = async () => {
     const response = await axios
@@ -23,7 +26,6 @@ const StarshipList = () => {
     getStarshipsData();
   }, [page]);
 
-
   const handleViewMore = () => {
     setPage(page + 1);
   };
@@ -31,7 +33,7 @@ const StarshipList = () => {
   return (
     <div>
       <StarshipContainer>
-        {starshipArray &&
+        {starshipArray && userInfo && 
           starshipArray.map((starship, index) => (
             <div>
               <ul>
@@ -43,7 +45,6 @@ const StarshipList = () => {
                   </StarshipTitle>
                 </li>
                 <li>{starship.model}</li>
-                <li>ID nave: {cutUrl(starship.url)}</li>
               </ul>
             </div>
           ))}

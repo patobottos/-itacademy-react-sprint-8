@@ -7,17 +7,19 @@ export const StarshipName = styled.div`
   color: white;
   text-align: center;
   padding: 10px;
-  margin: 10px 0;
+  margin: 10px 0 30px 0;
 `;
 
 export const StarshipImg = styled.div`
   background-image: url("https://www.udacity.com/blog/wp-content/uploads/2021/02/img8.png");
   background-repeat: no-repeat;
   background-position-x: center;
+  background-position-y: center;
   display: flex;
   width: auto;
-  height: 40vh;
-  margin: 40px 0px;
+  height: 50vh;
+  margin: 40px 20px 60px 20px;
+  padding: 10px;
   align-items: center;
   justify-content: center;
 `;
@@ -27,7 +29,7 @@ export const StarshipDetailsContainer = styled.div`
   border-radius: 6px;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 10px 30px;
   margin: 10px 0;
 `;
 

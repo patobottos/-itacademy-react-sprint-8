@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   SignupMainContainer,
   SignupContainer,
@@ -8,26 +9,32 @@ import {
 } from "./Signup.styled";
 import { Link } from "react-router-dom";
 
-export default function Signup(props) {
+export default function Signup() {
   const [userData, setUserData] = useState({
     name: "",
     email: "",
-    password: "",
+    password: ""
   });
 
   const [signedUpUser, setSignedUpUser] = useState(false);
+  const navigate = useNavigate();
 
   const handleSignup = (event) => {
+    
+
     event.preventDefault();
 
-    if (userData.name && userData.email && userData.password) {
+    if (!userData.name || !userData.email || !userData.password) {
+      alert("Please, fill in all the fields");
+    } else {
       setUserData({
         name: "",
         email: "",
-        password: "",
+        password: ""
       });
       localStorage.setItem("userInfo", JSON.stringify(userData));
       setSignedUpUser(true);
+      navigate("/login/");
     }
 
     console.log("User Name:", userData.name);
@@ -96,14 +103,12 @@ export default function Signup(props) {
             </SignupContainer>
             <SignupButton type="submit">Sign up</SignupButton>
           </form>
-          <SignupFooter onClick={() => props.onFormSwitch("login")}>
+          <SignupFooter onClick={() => navigate('/login')}>
             You already have an account? Log in here!
           </SignupFooter>
         </SignupMainContainer>
       )}
-
       </div>
-      
     </div>
   );
 }

@@ -8,19 +8,23 @@ export const WelcomeContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
 `;
 
 export const WelcomeButton = styled.button`
   font-family: "Cairo";
   font-size: 0.95rem;
+  letter-spacing: 0.04rem;
+  font-weight: 700;
   border: 0.5px solid #bfbfbf;
   border-radius: 7px;
   background-color: #000;
   color: #bfbfbf;
   cursor: pointer;
-  padding: 6px 12px;
+  padding: 5px 10px;
   text-align: center;
-  width: 15vw;
+  width: 19vw;
   margin: 20px;
   transition: 0.3s;
   align-self: center;

@@ -25,7 +25,7 @@ const Router = () => (
         <Route path="/welcome/" element={<Welcome />} />
         <Route path="*" element={<Error />} />
       </Routes>
-      {/* <Footer /> COMENTO PER TENIR MES ESPAI AL LOGIN*/}
+      <Footer /> {/* COMENTO PER TENIR MES ESPAI AL LOGIN */}
     </AppContainer>
   </BrowserRouter>
 );

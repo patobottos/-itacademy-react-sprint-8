@@ -6,9 +6,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return ( 
     <HeaderContainer>
-      <div>
-        <img src={starWarslogo} alt="star wars logo" />
-      </div>
+      <img src={starWarslogo} alt="star wars logo" />
       <ButtonsContainer>
         <HeaderButton><Link to="/login">LOG IN</Link></HeaderButton>
         <HeaderButton><Link to="/signup">SIGN UP</Link></HeaderButton>

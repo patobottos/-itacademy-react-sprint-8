@@ -5,9 +5,10 @@ export const NavbarContainer = styled.div`
   justify-content: center;
   align-items: center;
   font-family: "Cairo";
-  font-size: 0.95rem;
+  font-size: 1rem;
   border-bottom: 1px solid grey;
   background-color: #000;
+  letter-spacing: 0.04rem;
 
   ul {
     display: flex;

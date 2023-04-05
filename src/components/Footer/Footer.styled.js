@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.div`
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100vw;
   height: auto;
@@ -49,7 +49,7 @@ export const FooterContainer = styled.div`
   }
 
   .lastline {
-    margin-bottom: 5px;
+    margin-bottom: 50px;
   }
 
   ul {

@@ -34,8 +34,6 @@ const StarshipCard = () => {
   const starshipImg =
     "https://starwars-visualguide.com/assets/img/starships/" + id + ".jpg";
 
-  // console.log("starshipImg", starshipImg);
-
   return (
     <div>
       {starshipData && (
@@ -43,7 +41,6 @@ const StarshipCard = () => {
           <StarshipContainer>
             <StarshipName>
               {starship.name}
-              <h1>Viendo id: {id}</h1>
             </StarshipName>
 
             <StarshipImg>
@@ -53,19 +50,19 @@ const StarshipCard = () => {
               <DetailsTop>
                 <div className="item">
                   <div className="title">MODEL:</div>
-                  <div className="data">{starship.model}</div>
+                  <div className="data">{starshipData.model}</div>
                 </div>
                 <div className="item">
                   <div className="title">STARSHIP CLASS:</div>
-                  <div className="data">{starship.starship_class}</div>
+                  <div className="data">{starshipData.starship_class}</div>
                 </div>
                 <div className="item">
                   <div className="title">MANUFACTURER:</div>
-                  <div className="data">{starship.manufacturer}</div>
+                  <div className="data">{starshipData.manufacturer}</div>
                 </div>
                 <div className="item">
                   <div className="title">COST:</div>
-                  <div className="data">{starship.cost_in_credits} credits</div>
+                  <div className="data">{starshipData.cost_in_credits} credits</div>
                 </div>
               </DetailsTop>
 
@@ -73,53 +70,53 @@ const StarshipCard = () => {
                 <div className="left">
                   <div className="item">
                     <div className="title">CREW:</div>
-                    <div className="data">{starship.crew}</div>
+                    <div className="data">{starshipData.crew}</div>
                   </div>
 
                   <div className="item">
                     <div className="title">PASSENGER CAPACITY:</div>
-                    <div className="data">{starship.passengers}</div>
+                    <div className="data">{starshipData.passengers}</div>
                   </div>
 
                   <div className="item">
                     <div className="title">CARGO CAPACITY:</div>
-                    <div className="data">{starship.cargo_capacity}</div>
+                    <div className="data">{starshipData.cargo_capacity}</div>
                   </div>
 
                   <div className="item">
                     <div className="title">CONSUMABLES:</div>
-                    <div className="data">{starship.consumables}</div>
+                    <div className="data">{starshipData.consumables}</div>
                   </div>
                 </div>
 
                 <div className="right">
                   <div className="item">
                     <div className="title">LENGTH:</div>
-                    <div className="data">{starship.length}</div>
+                    <div className="data">{starshipData.length}</div>
                   </div>
 
                   <div className="item">
                     <div className="title">MAXIMUM ATMOSPHERING SPEED:</div>
                     <div className="data">
-                      {starship.max_atmosphering_speed}
+                      {starshipData.max_atmosphering_speed}
                     </div>
                   </div>
 
                   <div className="item">
                     <div className="title">HYPERDRIVE RATING:</div>
-                    <div className="data">{starship.hyperdrive_rating}</div>
+                    <div className="data">{starshipData.hyperdrive_rating}</div>
                   </div>
 
                   <div className="item">
                     <div className="title">MAXIMUM SPEED IN REALSPACE:</div>
-                    <div className="data">{starship.MGLT}</div>
+                    <div className="data">{starshipData.MGLT}</div>
                   </div>
                 </div>
               </DetailsMiddle>
               <DetailsMiddle>
                 <div className="item">
                   <div className="title">PILOTS:</div>
-                  <div className="data">{starship.pilots}</div>
+                  <div className="data">{starshipData.pilots}</div>
                 </div>
               </DetailsMiddle>
             </StarshipDetailsContainer>

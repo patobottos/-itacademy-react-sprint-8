@@ -1,23 +1,25 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 import {
   LoginMainContainer,
   LoginContainer,
   LoginButton,
   LoginFooter,
 } from "./Login.styled.js";
-import { Link } from "react-router-dom";
 
-export default function Login(props) {
+export default function Login() {
   const [userEmailLogin, setUserEmailLogin] = useState("");
   const [userPasswordLogin, setUserPasswordLogin] = useState("");
   //const userData = { userEmailLogin, userPasswordLogin };
   const [successfulLogin, setSuccessfulLogin] = useState(false);
+  const navigate = useNavigate();
 
-  const handleLogin = (event) => {
-    event.preventDefault();
+  const handleLogin = (e) => {
+    e.preventDefault();
 
-    let savedUserData = localStorage.getItem("userInfo");
-    let savedUserDataParsed = JSON.parse(savedUserData);
+    const savedUserData = localStorage.getItem("userInfo");
+    const savedUserDataParsed = JSON.parse(savedUserData);
 
     console.log("saved user data al inicio", savedUserDataParsed);
     console.log("userEmailLogin", userEmailLogin);
@@ -25,16 +27,21 @@ export default function Login(props) {
     console.log("savedUserDataParsed.email", savedUserDataParsed.email);
     console.log("savedUserDataParsed.password", savedUserDataParsed.password);
 
-    if ((savedUserDataParsed = false)) {
+    if (savedUserData === false) {
       alert("Please, sign up first");
-    }
-
-    if (userEmailLogin === savedUserDataParsed.email &&
-        userPasswordLogin === savedUserDataParsed.password ) {
-      console.log("Succesful login!");
-      setSuccessfulLogin(true);
     } else {
-      console.log("Login error!");
+      if (
+        userEmailLogin === savedUserDataParsed.email &&
+        userPasswordLogin === savedUserDataParsed.password
+      ) {
+        console.log("Succesful login!");
+        setSuccessfulLogin(true);
+        localStorage.setItem("userInfo", JSON.stringify(savedUserData));
+
+        navigate("/welcome/");
+      } else {
+        console.log("Login error!");
+      }
     }
   };
 
@@ -72,9 +79,11 @@ export default function Login(props) {
                 onChange={(event) => setUserPasswordLogin(event.target.value)}
               />
             </LoginContainer>
-            <LoginButton type="button" onClick={handleLogin}>Log in</LoginButton>
+            <LoginButton type="button" onClick={handleLogin}>
+              Log in
+            </LoginButton>
           </form>
-          <LoginFooter onClick={() => props.onFormSwitch("signup")}>
+          <LoginFooter onClick={() => navigate('/signup')}>
             Don't you have an account? Register here!
           </LoginFooter>
         </LoginMainContainer>
