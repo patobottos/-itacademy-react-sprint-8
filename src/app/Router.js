@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PrivateRoute from "./PrivateRoute";
 import Home from "../pages/Home/Home";
 import Starships from "../pages/Starships/Starships";
 import Starship from "../pages/Starship/Starship";
@@ -18,6 +19,7 @@ const Router = () => (
       <Navbar />
       <Routes>
         <Route index element={<Home />} />
+        {/* <Route path="/starships/" element={<PrivateRoute component={Starships} />} /> */}
         <Route path="/starships/" element={<Starships />} />
         <Route path="/starships/:id" element={<Starship />} />
         <Route path="/login/" element={<Login />} />
@@ -25,7 +27,7 @@ const Router = () => (
         <Route path="/welcome/" element={<Welcome />} />
         <Route path="*" element={<Error />} />
       </Routes>
-      <Footer /> {/* COMENTO PER TENIR MES ESPAI AL LOGIN */}
+      <Footer />
     </AppContainer>
   </BrowserRouter>
 );

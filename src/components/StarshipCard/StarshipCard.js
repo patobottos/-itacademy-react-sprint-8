@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { StarshipContainer } from "../StarshipList/Starships.styled";
-import {StarshipName, StarshipDetailsContainer, DetailsTop, DetailsMiddle, StarshipImg} from './StarshipCard.styles';
+import {
+  StarshipName,
+  StarshipDetailsContainer,
+  DetailsTop,
+  DetailsMiddle,
+  StarshipImg,
+} from "./StarshipCard.styles";
+import PilotsList from "../Pilots/PilotsList";
 import { useParams } from "react-router-dom";
 
 const StarshipCard = () => {
@@ -13,7 +20,7 @@ const StarshipCard = () => {
   // FUNCTION TO GET STARSHIP DATA
   const getStarshipData = async () => {
     const response = await axios
-      .get("https://swapi.dev/api/starships/"+ id )
+      .get("https://swapi.dev/api/starships/" + id)
       .then((res) => res.data)
       .catch((error) => {
         setError(error);
@@ -29,7 +36,7 @@ const StarshipCard = () => {
   // PRINT ERROR
   if (error) return `There has been an error!`;
 
-  const starship = {...starshipData}; // QUITAR ESTA LINEA, NO ES NECESARIO
+  const starship = { ...starshipData }; // QUITAR ESTA LINEA, NO ES NECESARIO
 
   const starshipImg =
     "https://starwars-visualguide.com/assets/img/starships/" + id + ".jpg";
@@ -39,12 +46,10 @@ const StarshipCard = () => {
       {starshipData && (
         <div>
           <StarshipContainer>
-            <StarshipName>
-              {starship.name}
-            </StarshipName>
+            <StarshipName>{starship.name}</StarshipName>
 
             <StarshipImg>
-              <img src={starshipImg} alt={"starship-img"}/>
+              <img src={starshipImg} alt={"starship-img"} />
             </StarshipImg>
             <StarshipDetailsContainer>
               <DetailsTop>
@@ -62,7 +67,9 @@ const StarshipCard = () => {
                 </div>
                 <div className="item">
                   <div className="title">COST:</div>
-                  <div className="data">{starshipData.cost_in_credits} credits</div>
+                  <div className="data">
+                    {starshipData.cost_in_credits} credits
+                  </div>
                 </div>
               </DetailsTop>
 
@@ -114,9 +121,16 @@ const StarshipCard = () => {
                 </div>
               </DetailsMiddle>
               <DetailsMiddle>
-                <div className="item">
-                  <div className="title">PILOTS:</div>
-                  <div className="data">{starshipData.pilots}</div>
+                <div className="left">
+                  <div className="item">
+                    <div className="title">PILOTS:</div>
+                    <PilotsList pilots={starshipData.pilots}/>
+                  </div>
+
+                  <div className="item">
+                    <div className="title">FILMS:</div>
+                    <div className="data">{starshipData.films}</div>
+                  </div>
                 </div>
               </DetailsMiddle>
             </StarshipDetailsContainer>
@@ -125,6 +139,6 @@ const StarshipCard = () => {
       )}
     </div>
   );
-}
+};
 
 export default StarshipCard;

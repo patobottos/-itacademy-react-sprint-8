@@ -21,7 +21,6 @@ export default function Signup() {
 
   const handleSignup = (event) => {
     
-
     event.preventDefault();
 
     if (!userData.name || !userData.email || !userData.password) {

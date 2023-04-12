@@ -10,7 +10,6 @@ export const HeaderContainer = styled.div`
   gap: 0.75rem;
   text-align: center;
   background-color: #000;
-  border: 1px solid green;
 
   img {
     display: inline-block;
